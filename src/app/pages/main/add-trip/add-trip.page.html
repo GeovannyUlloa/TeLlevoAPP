@@ -50,7 +50,6 @@
     <div class="validators" *ngIf="formulario.submitted && !formulario.controls['pasajerosActuales'].valid">
       <div *ngIf="formulario.controls['pasajerosActuales'].errors?.['required']">El número de pasajeros actuales es requerido</div>
       <div *ngIf="formulario.controls['pasajerosActuales'].errors?.['min']">Debe ser un valor mayor o igual a 0</div>
-      <div *ngIf="formulario.controls['pasajerosActuales'].errors?.['agregarNuevoViaje()']">El número de pasajeros actuales no puede ser mayor que el número de pasajeros máximos</div>
     </div>
 
     <ion-item>
@@ -59,7 +58,6 @@
     </ion-item>
     <div class="validators" *ngIf="formulario.submitted && !formulario.controls['pasajerosMaximos'].valid">
       <div *ngIf="formulario.controls['pasajerosMaximos'].errors?.['required']">El número de pasajeros máximos es requerido</div>
-      <div *ngIf="formulario.controls['pasajerosMaximos'].errors?.['agregarNuevoViaje()']">Debe ser un valor mayor o igual a 1</div>
     </div>
 
     <ion-button expand="full" type="submit" color="primary">Agregar Viaje</ion-button>
