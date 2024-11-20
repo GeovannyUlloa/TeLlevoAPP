@@ -7,7 +7,7 @@ import { of } from 'rxjs';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 class MockFirebaseService {
-    isAuthenticated = false; // Cambia esto para probar diferentes escenarios
+    isAuthenticated = false; 
 }
 
 describe('AuthGuard', () => {
@@ -40,17 +40,17 @@ describe('AuthGuard', () => {
     });
 
     it('should allow access if authenticated', () => {
-        firebaseService.isAuthenticated = true; // Simula que el usuario está autenticado
-        const next = new ActivatedRouteSnapshot(); // Simula el ActivatedRouteSnapshot
-        const state = {} as RouterStateSnapshot; // Simula el RouterStateSnapshot
+        firebaseService.isAuthenticated = true;
+        const next = new ActivatedRouteSnapshot();
+        const state = {} as RouterStateSnapshot;
         const result = executeGuard(next, state);
         expect(result).toBeTrue();
     });
 
     it('should deny access and navigate to /auth if not authenticated', () => {
-        firebaseService.isAuthenticated = false; // Simula que el usuario no está autenticado
-        const next = new ActivatedRouteSnapshot(); // Simula el ActivatedRouteSnapshot
-        const state = {} as RouterStateSnapshot; // Simula el RouterStateSnapshot
+        firebaseService.isAuthenticated = false;
+        const next = new ActivatedRouteSnapshot();
+        const state = {} as RouterStateSnapshot;
         const result = executeGuard(next, state);
         expect(result).toBeFalse();
         expect(router.navigate).toHaveBeenCalledWith(['/auth']);
