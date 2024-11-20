@@ -12,13 +12,13 @@ import { UtilsService } from 'src/app/services/utils.service';
 })
 export class HomePage implements OnInit {
 
-firebaseService = inject(FirebaseService);
+  firebaseService = inject(FirebaseService);
   utilsService = inject(UtilsService);
 
-  username: string |null = '';
+  username: string | null = '';
   viajes: any[] = [];
 
-  constructor(private viajesService: ViajesService, private router: Router) {}
+  constructor(private viajesService: ViajesService, private router: Router) { }
 
   ngOnInit() {
     this.username = sessionStorage.getItem('username');
