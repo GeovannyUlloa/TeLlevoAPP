@@ -1,3 +1,12 @@
+node --version
+
+npm --version
+
+npm install -g @ionic/cli
+
+npm install -g npm@10.9.0
+
+
 ### **1. Instalar Ionic y Angular CLI (si no lo tienes instalado)**
 Primero, instala las herramientas globales para trabajar con Ionic y Angular:
 

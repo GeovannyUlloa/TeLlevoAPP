@@ -25,14 +25,16 @@ export class AddTripPage {
 
     if (this.nuevoViaje.pasajerosActuales > this.nuevoViaje.pasajerosMaximos) {
       console.error('El número de pasajeros actuales no puede ser mayor que el número de pasajeros máximos.');
-      return;
+      return true;
     }
 
     if (this.nuevoViaje.destino && this.nuevoViaje.conductor && this.nuevoViaje.fecha && this.nuevoViaje.hora && this.nuevoViaje.puntoEncuentro && this.nuevoViaje.pasajerosActuales >= 0) {
       this.viajesService.agregarViaje(this.nuevoViaje);
       this.router.navigate(['/main/home']);
+      return true;
     } else {
       console.error('Por favor completa todos los campos.');
+      return false;
     }
   }
 }
