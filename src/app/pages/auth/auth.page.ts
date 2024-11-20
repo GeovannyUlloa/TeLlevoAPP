@@ -16,7 +16,6 @@ export class AuthPage implements OnInit {
   utilsService = inject(UtilsService);
 
   form = new FormGroup({
-    // username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required])
   })
@@ -47,14 +46,6 @@ export class AuthPage implements OnInit {
           loading.dismiss();
         })
 
-
-      // const username = this.form.value.username || '';
-
-      // sessionStorage.setItem('username', username);
-
-      // this.router.navigate(['/main/home']);
-
-      // console.log(this.form.value);
     } else {
       console.log('Formulario inválido');
     }
@@ -96,15 +87,6 @@ export class AuthPage implements OnInit {
         }).finally(() => {
           loading.dismiss();
         })
-
-
-      // const username = this.form.value.username || '';
-
-      // sessionStorage.setItem('username', username);
-
-      // this.router.navigate(['/main/home']);
-
-      // console.log(this.form.value);
     } else {
       console.log('Formulario inválido');
     }

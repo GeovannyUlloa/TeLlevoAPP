@@ -14,7 +14,7 @@
         <div class="name">Viaje a {{ viaje.destino }}</div>
         <div class="data">
           <strong>Conductor: </strong> {{ viaje.conductor }} <br>
-          <strong>Fecha: </strong> {{ viaje.fecha }} <br>
+          <strong>Fecha: </strong> {{ viaje.fecha | date:'dd/MM/yyyy' }} <br>
           <strong>Hora: </strong> {{ viaje.hora }} <br>
           <strong>Punto de Encuentro: </strong> {{ viaje.puntoEncuentro }} <br>
           <strong>Pasajeros: </strong> {{ viaje.pasajerosActuales }}/{{ viaje.pasajerosMaximos }}

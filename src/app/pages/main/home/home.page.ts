@@ -26,20 +26,9 @@ export class HomePage implements OnInit {
   constructor(private viajesService: ViajesService, private router: Router) { }
 
   ngOnInit() {
-    // this.username = sessionStorage.getItem('username');
     this.cargarViajes();
-    this.obtenerHoraChile();
-  }
-
-
-  obtenerHoraChile() {
-    this.timeService.obtenerHoraChile().subscribe((data) => {
-      const fecha = new Date(data.datetime);
-      const horas = fecha.getHours().toString().padStart(2, '0');
-      const minutos = fecha.getMinutes().toString().padStart(2, '0');
-      this.horaChile = `${horas}:${minutos}`;
-    }, (error) => {
-      console.error('Error al obtener la hora:', error);
+    this.timeService.hora$.subscribe(hora => {
+      this.horaChile = hora;
     })
   }
 
