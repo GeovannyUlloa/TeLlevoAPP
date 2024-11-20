@@ -14,21 +14,12 @@ export class ForgotPasswordPage implements OnInit {
   firebaseService = inject(FirebaseService);
   utilsService = inject(UtilsService);
   form = new FormGroup({
-    // username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
   })
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
-  // submit() {
-  //   if(this.form.valid){
-  //     console.log(this.form.value)
-
-  //     this.router.navigate(['/auth']);
-  //   }
-  // }
 
   async submit() {
     if (this.form.valid) {
@@ -63,14 +54,6 @@ export class ForgotPasswordPage implements OnInit {
           loading.dismiss();
         })
 
-
-      // const username = this.form.value.username || '';
-
-      // sessionStorage.setItem('username', username);
-
-      // this.router.navigate(['/main/home']);
-
-      // console.log(this.form.value);
     } else {
       console.log('Formulario inválido');
     }

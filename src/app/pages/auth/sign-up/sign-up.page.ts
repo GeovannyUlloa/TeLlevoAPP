@@ -52,15 +52,6 @@ export class SignUpPage implements OnInit {
       }).finally(() => {
         loading.dismiss();
       })
-
-      // const username = this.form.value.username || '';
-
-      // sessionStorage.setItem('username', username);
-
-      // this.router.navigate(['/main/home']);
-
-      // console.log(this.form.value);
-    
     }
   }
 
@@ -91,15 +82,6 @@ export class SignUpPage implements OnInit {
       }).finally(() => {
         loading.dismiss();
       })
-      
-
-      // const username = this.form.value.username || '';
-
-      // sessionStorage.setItem('username', username);
-
-      // this.router.navigate(['/main/home']);
-      
-      // console.log(this.form.value);
     } else {
       console.log('Formulario inválido');
     }

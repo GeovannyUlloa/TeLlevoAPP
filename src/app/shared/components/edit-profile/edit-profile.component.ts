@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ViajesService } from '../../../viajes.service'; // Ajusta la ruta según tu estructura
+import { ViajesService } from '../../../viajes.service';
 
 @Component({
   selector: 'app-edit-profile',
