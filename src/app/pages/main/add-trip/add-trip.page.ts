@@ -22,6 +22,12 @@ export class AddTripPage {
   constructor(private viajesService: ViajesService, private router: Router) {}
 
   agregarNuevoViaje() {
+
+    if (this.nuevoViaje.pasajerosActuales > this.nuevoViaje.pasajerosMaximos) {
+      console.error('El número de pasajeros actuales no puede ser mayor que el número de pasajeros máximos.');
+      return;
+    }
+
     if (this.nuevoViaje.destino && this.nuevoViaje.conductor && this.nuevoViaje.fecha && this.nuevoViaje.hora && this.nuevoViaje.puntoEncuentro && this.nuevoViaje.pasajerosActuales >= 0) {
       this.viajesService.agregarViaje(this.nuevoViaje);
       this.router.navigate(['/main/home']);

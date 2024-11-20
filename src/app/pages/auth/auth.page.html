@@ -4,17 +4,6 @@
 
     <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form" (keypress.enter)="submit()">
       <app-logo></app-logo>
-
-      <!-- <app-login-input
-      type="text"
-      label="Nombre de Usuario"
-      icon="person-outline"
-      [control]="form.controls.username"
-      ></app-login-input>
-
-      <div class="validators" *ngIf="form.controls.username.errors && form.controls.username.touched">
-        <div *ngIf="form.controls.username.errors?.['required']">El nombre es requerido</div>
-      </div> -->
       
       <app-login-input
       autocomplete="email"

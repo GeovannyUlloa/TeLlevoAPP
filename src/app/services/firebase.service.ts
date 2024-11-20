@@ -15,6 +15,10 @@ export class FirebaseService {
   firestore = inject(AngularFirestore);
   utilsService = inject(UtilsService);
   
+  get isAuthenticated(): boolean {
+    return getAuth().currentUser !== null; // Si currentUser es null, no está autenticado
+  }
+
   getAuth() {
     return getAuth();
   }
