@@ -32,7 +32,6 @@ export class HomePage implements OnInit {
   }
 
 
-
   obtenerHoraChile() {
     this.timeService.obtenerHoraChile().subscribe((data) => {
       const fecha = new Date(data.datetime);
