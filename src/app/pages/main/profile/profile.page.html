@@ -7,6 +7,7 @@
         <ion-icon name="camera-outline"></ion-icon>
     </ion-button>
     <h1>Perfil</h1>
-    <h4>Nombre: {{ user()?.name }}</h4>
+    <p>Nombre: {{ user()?.name }}</p>
     <p>Correo: {{ user()?.email }}</p>
+    <p>Rol: {{ user()?.rol ? user().rol : 'Ninguno' }}</p>
 </ion-content>
