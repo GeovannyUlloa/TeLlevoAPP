@@ -11,12 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBK0TMIzr-C65HOhwpNj9wRjZE6Ytb3V5o",
-  authDomain: "tellevoapp-1b9a6.firebaseapp.com",
-  projectId: "tellevoapp-1b9a6",
-  storageBucket: "tellevoapp-1b9a6.firebasestorage.app",
-  messagingSenderId: "604340306468",
-  appId: "1:604340306468:web:3ed7f87927d328efeeceb1"
+  'xd'
 };
 
 initializeApp(firebaseConfig);
