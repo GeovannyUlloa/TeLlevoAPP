@@ -25,7 +25,6 @@ export class AddTripPage {
 
     if (this.nuevoViaje.pasajerosActuales > this.nuevoViaje.pasajerosMaximos) {
       console.error('El número de pasajeros actuales no puede ser mayor que el número de pasajeros máximos.');
-      alert("hola");
       return true;
     }
 
