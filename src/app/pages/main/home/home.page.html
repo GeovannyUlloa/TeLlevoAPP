@@ -1,0 +1,30 @@
+<app-header [showMenu]="true" title="Inicio"></app-header>
+<ion-content>
+  <div class="ion-padding-top title-container">
+    <h2>Bienvenido {{ user()?.name }}</h2>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let viaje of viajes">
+      <ion-avatar slot="start">
+        <ion-icon name="car-outline" size="large"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <div class="name">Viaje a {{ viaje.destino }}</div>
+        <div class="data">
+          <strong>Conductor: </strong> {{ viaje.conductor }} <br>
+          <strong>Fecha: </strong> {{ viaje.fecha }} <br>
+          <strong>Hora: </strong> {{ viaje.hora }} <br>
+          <strong>Punto de Encuentro: </strong> {{ viaje.puntoEncuentro }} <br>
+          <strong>Pasajeros: </strong> {{ viaje.pasajerosActuales }}/{{ viaje.pasajerosMaximos }}
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button [routerLink]="['/main/add-trip']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

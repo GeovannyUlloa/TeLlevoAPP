@@ -1,0 +1,66 @@
+<app-header [showMenu]="true" title="Agregar Viaje"></app-header>
+
+<ion-content class="ion-padding">
+  <form #formulario="ngForm" (ngSubmit)="agregarNuevoViaje()">
+    
+    <ion-item>
+      <ion-label position="stacked">Destino</ion-label>
+      <ion-input type="text" [(ngModel)]="nuevoViaje.destino" name="destino" required></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="formulario.submitted && !formulario.controls['destino'].valid">
+      <div *ngIf="formulario.controls['destino'].errors?.['required']">El destino es requerido</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="stacked">Conductor</ion-label>
+      <ion-input type="text" [(ngModel)]="nuevoViaje.conductor" name="conductor" required></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="formulario.submitted && !formulario.controls['conductor'].valid">
+      <div *ngIf="formulario.controls['conductor'].errors?.['required']">El conductor es requerido</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-input type="date" [(ngModel)]="nuevoViaje.fecha" name="fecha" required></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="formulario.submitted && !formulario.controls['fecha'].valid">
+      <div *ngIf="formulario.controls['fecha'].errors?.['required']">La fecha es requerida</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="stacked">Hora</ion-label>
+      <ion-input type="time" [(ngModel)]="nuevoViaje.hora" name="hora" required></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="formulario.submitted && !formulario.controls['hora'].valid">
+      <div *ngIf="formulario.controls['hora'].errors?.['required']">La hora es requerida</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="stacked">Punto de Encuentro</ion-label>
+      <ion-input type="text" [(ngModel)]="nuevoViaje.puntoEncuentro" name="puntoEncuentro" required></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="formulario.submitted && !formulario.controls['puntoEncuentro'].valid">
+      <div *ngIf="formulario.controls['puntoEncuentro'].errors?.['required']">El punto de encuentro es requerido</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="stacked">Pasajeros (actuales)</ion-label>
+      <ion-input type="number" [(ngModel)]="nuevoViaje.pasajerosActuales" name="pasajerosActuales" required min="0"></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="formulario.submitted && !formulario.controls['pasajerosActuales'].valid">
+      <div *ngIf="formulario.controls['pasajerosActuales'].errors?.['required']">El número de pasajeros actuales es requerido</div>
+      <div *ngIf="formulario.controls['pasajerosActuales'].errors?.['min']">Debe ser un valor mayor o igual a 0</div>
+    </div>
+
+    <ion-item>
+      <ion-label position="stacked">Pasajeros (máximos)</ion-label>
+      <ion-input type="number" [(ngModel)]="nuevoViaje.pasajerosMaximos" name="pasajerosMaximos" required min="1"></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="formulario.submitted && !formulario.controls['pasajerosMaximos'].valid">
+      <div *ngIf="formulario.controls['pasajerosMaximos'].errors?.['required']">El número de pasajeros máximos es requerido</div>
+      <div *ngIf="formulario.controls['pasajerosMaximos'].errors?.['min']">Debe ser un valor mayor o igual a 1</div>
+    </div>
+
+    <ion-button expand="full" type="submit" color="primary">Agregar Viaje</ion-button>
+  </form>
+</ion-content>
