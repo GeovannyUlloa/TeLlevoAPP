@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TimeService {
 
-  http = inject(HttpClient);
+  http = inject(HttpClient)
 
   constructor() { }
 
