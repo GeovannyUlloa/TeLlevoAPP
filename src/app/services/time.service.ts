@@ -9,7 +9,7 @@ export class TimeService {
 
   http = inject(HttpClient);
 
-  constructor() { 
+  constructor() { }
 
   obtenerHoraChile():Observable<any> {
     const url = 'https://worldtimeapi.org/api/timezone/America/Santiago';
